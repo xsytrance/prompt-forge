@@ -86,6 +86,12 @@ export default function Navbar() {
             {darkMode ? <Sun size={20} /> : <Moon size={20} />}
           </button>
           <Link
+            to="/lab"
+            className="hidden md:inline-flex items-center px-5 py-2.5 rounded-xl bg-moss-700 text-white font-inter text-sm font-bold shadow-lg hover:bg-moss-800 transition-all duration-200 ring-2 ring-moss-300"
+          >
+            ✨ Prompt Lab
+          </Link>
+          <Link
             to="/auth"
             className="hidden md:inline-flex items-center px-4 py-2 rounded-[8px] border-2 border-moss-700 text-moss-700 font-inter text-sm font-medium hover:bg-moss-50 transition-all duration-200"
           >
@@ -135,7 +141,14 @@ export default function Navbar() {
                 </Link>
               ))}
             </div>
-            <div className="mt-auto pt-6 border-t border-stone-200">
+            <div className="mt-auto pt-6 border-t border-stone-200 space-y-3">
+              <Link
+                to="/lab"
+                onClick={() => setMobileOpen(false)}
+                className="block w-full text-center px-4 py-3 rounded-xl bg-moss-700 text-white font-inter text-sm font-bold shadow hover:bg-moss-800 transition-all duration-200"
+              >
+                ✨ Open Prompt Lab
+              </Link>
               <Link
                 to="/auth"
                 onClick={() => setMobileOpen(false)}

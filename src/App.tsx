@@ -2,9 +2,9 @@ import { Routes, Route, useLocation } from 'react-router'
 import { AnimatePresence, motion } from 'framer-motion'
 import Layout from './components/Layout'
 import Home from './pages/Home'
+import PromptLab from './pages/PromptLab'
 
 const BountyDetailPage = () => <div className="p-8 text-center text-stone-700">Bounty Detail</div>
-const PromptLabPage = () => <div className="p-8 text-center text-stone-700">Prompt Lab</div>
 const CommunityPage = () => <div className="p-8 text-center text-stone-700">Community</div>
 const ProfilePage = () => <div className="p-8 text-center text-stone-700">Profile</div>
 const AdminPage = () => <div className="p-8 text-center text-stone-700">Admin</div>
@@ -24,11 +24,12 @@ function AnimatedRoutes() {
         <Routes location={location}>
           <Route path="/" element={<Home />} />
           <Route path="/bounty/:id" element={<BountyDetailPage />} />
-          <Route path="/lab" element={<PromptLabPage />} />
+          <Route path="/lab" element={<PromptLab />} />
           <Route path="/community" element={<CommunityPage />} />
           <Route path="/profile/:username" element={<ProfilePage />} />
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/auth" element={<AuthPage />} />
+          <Route path="*" element={<Home />} />
         </Routes>
       </motion.div>
     </AnimatePresence>
